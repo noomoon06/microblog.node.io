@@ -1,32 +1,22 @@
-import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Login } from './pages';
 
 function App() {
-  const [data, setData] = React.useState(null);
+  // const [data, setData] = React.useState(null);
 
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+  // React.useEffect(() => {
+  //   fetch("/api")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.message));
+  // }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>{!data ? "Loading..." : data}</p>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="login" element={<Login />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
