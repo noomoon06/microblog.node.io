@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Login } from './pages';
+import { Home, Login } from './pages';
 
 function App() {
   // const [data, setData] = React.useState(null);
@@ -15,6 +15,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="login" element={<Login />}/>
+        <Route path="home" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
